@@ -1,3 +1,6 @@
+#errorBox {
+  display: none;
+}
 body {
   padding-top: 90px;
 }

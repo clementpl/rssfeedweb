@@ -1,15 +1,26 @@
-let Flux = require("./flux");
-let listFlux = require("./listFlux");
+let Flux = require('./flux');
+let listFlux = require('./listFlux');
+let ajax = require('./ajax');
+let host = require('./host');
+let subscribe = require('./subscribe')
+let $ = require("jquery");
 
 let M = {
   init: () => {
-    let list = new listFlux([{name: 'test', url:'test.xml'}]);
+    //list feeds
+    listFlux.init();
 
-/*
-    let test = new Flux ('/test.xml', () => {
-      console.log(test.getItems());
+    //Add subscribe hooks
+    subscribe.init();
+
+    //Add logout hook
+    $("#logout").click(() => {
+      ajax.get(`${host}logout`, (response) => {
+        console.log('logout response');
+        console.log(response);
+        document.location.href("/login.html")
+      });
     });
-*/
   }
 };
 

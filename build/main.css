@@ -3,3 +3,25 @@
   position: fixed;
   top: 51px;
 }
+#content {
+  height: 100%;
+  text-align: center;
+  overflow-y: auto;
+}
+.sidebar {
+  height: 100%;
+  overflow-y: auto;
+}
+#projectTitle,
+#subscribe a,
+#logout a {
+  color: #fff;
+}
+#projectTitle:hover,
+#subscribe a:hover,
+#logout a:hover {
+  color: #808080;
+}
+#errorSubscribe {
+  display: none;
+}
