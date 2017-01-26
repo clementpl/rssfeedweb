@@ -15,7 +15,7 @@ let M = {
 
     //Add logout hook
     $("#logout").click(() => {
-      ajax.get(`${host}logout`, (response) => {
+      ajax.logout((response) => {
         console.log('logout response');
         console.log(response);
         document.location.href("/login.html")

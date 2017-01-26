@@ -10,7 +10,7 @@ class Subscribe {
       if (!url.match(regex) || url == "") {
         $("#errorSubscribe").html('<strong>Please enter a valid url</strong>').show();
       } else {
-        ajax.post(`${host}subscribe`, {url: url}, (response) => {
+        ajax.subscribe(url, (response) => {
           $("#subscribeModal").modal('hide');
         });
         $("#subscribeModal").modal('hide');

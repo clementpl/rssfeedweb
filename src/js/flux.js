@@ -1,14 +1,20 @@
 let ajax = require('./ajax');
-let host = require('./host');
 
 module.exports = class Flux {
     constructor(id) {
         this.dom = $('#content');
         this.dom.html('');
-        ajax.getFlux(id, (xml) => {
-            this.xml = xml;
-            this.renderFlux();
-        });
+        if (id) {
+            ajax.getFlux(id, (xml) => {
+                this.xml = xml;
+                this.renderFlux();
+            });
+        }
+    }
+
+    init(xml) {
+        this.xml = xml;
+        this.renderFlux();
     }
 
     renderFlux() {
@@ -17,7 +23,7 @@ module.exports = class Flux {
         for (let i=0; i<items.length; i++) {
             let item = items[i];
             this.dom.append(
-                `<div class="row placeholders">
+                `<div class="item row placeholders">
                     <div class="col-xs-10 placeholder">
                         <h4>${item.title}</h4>
                         <span class="text-muted">${item.description}</span>

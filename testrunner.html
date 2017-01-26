@@ -5,12 +5,21 @@
     <link rel="stylesheet" href="node_modules/mocha/mocha.css">
   </head>
   <body>
+    <!-- Include html -->
+    <div style="display: none;" w3-include-html="src/index.html"></div>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <script>w3IncludeHTML();</script>
+
+    <!-- Test div -->
     <div id="mocha"></div>
     <script src="node_modules/mocha/mocha.js"></script>
     <script src="node_modules/chai/chai.js"></script>
     <script>mocha.setup('bdd')</script>
 
+
+    <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- test js -->
     <script src="test/testcompile.js"></script>
 
     <script>
