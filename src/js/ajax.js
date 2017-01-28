@@ -64,7 +64,8 @@ class Ajax {
     }
 
     errorHandler(error) {
-        console.log(error);
+      alert("error 500");
+      console.log(error);
     }
 }
 
