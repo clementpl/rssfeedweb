@@ -53,9 +53,9 @@ module.exports = class Flux {
                 this.items.push({
                     link: items[i].querySelector('link').textContent,
                     title: items[i].querySelector('title').textContent,
-                    description: items[i].querySelector('description').textContent,
-                    pubDate: items[i].querySelector('pubDate').textContent,
-                    enclosure: items[i].querySelector('enclosure').getAttribute('url'),
+                    description: items[i].querySelector('description').textContent
+//                    pubDate: items[i].querySelector('pubDate').textContent,
+//                    enclosure: items[i].querySelector('enclosure').getAttribute('url'),
                 });
             }
         }
