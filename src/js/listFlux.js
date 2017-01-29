@@ -17,13 +17,12 @@ class ListFlux {
       for (let i=0; i<list.length; i++) {
         if (i==0)//render first flux in list
           new Flux(list[i].id);
-        this.dom.append(`<li id=${list[i].id}><a id=${list[i].id} href="#">${list[i].title}</a></li>`);//bind the data
+        this.dom.append(`<li id=${list[i].id}><a id=${list[i].id} href="#">${list[i].name}</a></li>`);//bind the data
       }
     });
   }
 
   refresh() {
-    console.log("refresh list flux");
     this.init()
   }
 }

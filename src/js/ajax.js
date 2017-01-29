@@ -9,7 +9,7 @@ class Ajax {
 
     getListFlux(callback, url = `${host}feeds`) {
         this.get(url, (response) => {
-            let list = response.feeds || [];
+/*            let list = response.feeds || [];
             let listret = [];
             for (let i = 0; i < list.length; i++) {
                 //[0] == id , [1] == title, [2] == ? [3] == description, [4] == date
@@ -23,6 +23,8 @@ class Ajax {
                 });
             }
             callback(listret)
+*/
+          callback(response.feeds);
         });
     }
 

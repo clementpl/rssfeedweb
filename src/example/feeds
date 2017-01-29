@@ -1,18 +1,26 @@
 {
   "feeds": [
-    [
-      11,
-      "Le Monde.fr - Actualits et Infos en France et dans le monde",
-      "",
-      "Le Monde.fr - 1er site d'information. Les articles du journal et toute l'actualit en continu : International, France, Socit, Economie, Culture, Environnement, Blogs ...",
-      "Wed, 25 Jan 2017 12:48:31 +0100"
-    ],
-    [
-      12,
-      "Flux toutes les actualits - 01net",
-      "",
-      "01NET.COM",
-      "Wed, 25 Jan 2017 03:10:23 +0100"
-    ]
+    {
+      "id": 11,
+      "name": "LE FIGARO - Le Figaro - Les dernières actualités à la une",
+      "updatedAt": "Sat, 28 Jan 2017 14:16:01 +0100",
+      "url": "",
+      "fluxUrl": "",
+      "imageUrl": "",
+      "copyright": "",
+      "description": "A la Une : Retrouvez toute l'actualité en France, à l'internationale, l'actualité économique et politique avec Le Figaro",
+      "content": ""
+    },
+    {
+      "id": 12,
+      "name": "Argent & Placements : Toute l'actualité sur Le Monde.fr.",
+      "updatedAt": "Sat, 28 Jan 2017 14:15:52 +0100",
+      "url": "",
+      "fluxUrl": "",
+      "imageUrl": "",
+      "copyright": "",
+      "description": "Argent & Placements - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique Argent & Placements sur Le Monde.fr.",
+      "content": ""
+    }
   ]
 }
