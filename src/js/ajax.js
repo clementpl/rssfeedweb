@@ -7,7 +7,7 @@ class Ajax {
         this.get(`${url}${id}`, callback, 'xml');
     }
 
-    getListFlux(callback, url = `${host}feeds.json`) {
+    getListFlux(callback, url = `${host}feeds`) {
         this.get(url, (response) => {
             let list = response.feeds || [];
             let listret = [];
@@ -44,13 +44,19 @@ class Ajax {
             dataType: 'json',
             type: "POST",
             data: body,
-            crossDomain: true,
             success: (response) => {
             if (response.Error == "You are not connected")
                 this.redirectLogin();
               callback(response);
             },
-            error: this.errorHandler
+            error: (response) => {
+                if (response.responseJSON && response.responseJSON.Error) {
+                    response.Error = response.responseJSON.Error;
+                    callback(response);
+                }
+                else
+                    this.errorHandler();
+            }
         });
     }
 
@@ -59,13 +65,19 @@ class Ajax {
             url: url,
             dataType: responseType,
             type: 'GET',
-            crossDomain: true,
             success: (response) => {
-              if (response.Error =="You are not connected")
+              if (response.Error == "You are not connected")
                 this.redirectLogin();
               callback(response);
             },
-            error: this.errorHandler
+            error: (response) => {
+                if (response.responseJSON && response.responseJSON.Error) {
+                    response.Error = response.responseJSON.Error;
+                    callback(response);
+                }
+                else
+                    this.errorHandler();
+            }
         });
     }
 

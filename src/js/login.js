@@ -23,7 +23,10 @@ $(function() {
             userId: user,
             password: pass
         }, (response) => {
-            document.location.href = "/index.html";
+            if (response.Error)
+                $("#errorBox").html(`<strong>${response.Error}</strong>`).show();
+            else
+                document.location.href = "/index.html";
         });
     }
 
@@ -32,7 +35,10 @@ $(function() {
             userId: user,
             password: pass
         }, (response) => {
-            document.location.href = "/index.html";
+            if (response.Error)
+                $("#errorBox").html(`<strong>${response.Error}</strong>`).show();
+            else
+                document.location.href = "/index.html";
         });
     }
 
