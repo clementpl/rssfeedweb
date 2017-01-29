@@ -26,7 +26,7 @@ $(function() {
             if (response.Error)
                 $("#errorBox").html(`<strong>${response.Error}</strong>`).show();
             else
-                document.location.href = "/index.html";
+                document.location.href = "index.html";
         });
     }
 
@@ -38,7 +38,7 @@ $(function() {
             if (response.Error)
                 $("#errorBox").html(`<strong>${response.Error}</strong>`).show();
             else
-                document.location.href = "/index.html";
+                document.location.href = "index.html";
         });
     }
 

@@ -84,7 +84,7 @@ class Ajax {
     }
 
     redirectLogin() {
-      document.location.href = '/login.html';
+      document.location.href = 'login.html';
     }
 
     errorHandler(error) {
