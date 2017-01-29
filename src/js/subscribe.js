@@ -3,7 +3,7 @@ let ajax = require('./ajax');
 class Subscribe {
   constructor() {}
 
-  init() {
+  init(options={}) {
     $("#validateModal").click(() => {
       let url = $("#urlSubscribe").val();
       var regex = new RegExp(/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi);
@@ -12,6 +12,8 @@ class Subscribe {
       } else {
         ajax.subscribe(url, (response) => {
           $("#subscribeModal").modal('hide');
+          if (options.onSubscribe)
+            options.onSubscribe();
         });
         $("#subscribeModal").modal('hide');
       }

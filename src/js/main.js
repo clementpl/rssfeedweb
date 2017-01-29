@@ -11,15 +11,13 @@ let M = {
     listFlux.init();
 
     //Add subscribe hooks
-    subscribe.init();
+    subscribe.init({onSubscribe: () => {
+      listFlux.refresh();
+    }});
 
     //Add logout hook
     $("#logout").click(() => {
-      ajax.logout((response) => {
-        console.log('logout response');
-        console.log(response);
-        document.location.href("/login.html")
-      });
+      ajax.logout();
     });
   }
 };

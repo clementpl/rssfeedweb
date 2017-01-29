@@ -33,7 +33,9 @@ class Ajax {
     }
 
     logout(callback) {
-        this.get(`${host}logout`, callback);
+        this.get(`${host}logout`, (response) => {
+            this.redirectLogin();
+        });
     }
 
     post(url, body, callback) {
@@ -44,7 +46,9 @@ class Ajax {
             data: body,
             crossDomain: true,
             success: (response) => {
-                callback(response);
+            if (response.Error == "You are not connected")
+                this.redirectLogin();
+              callback(response);
             },
             error: this.errorHandler
         });
@@ -57,14 +61,20 @@ class Ajax {
             type: 'GET',
             crossDomain: true,
             success: (response) => {
-                callback(response);
+              if (response.Error =="You are not connected")
+                this.redirectLogin();
+              callback(response);
             },
             error: this.errorHandler
         });
     }
 
+    redirectLogin() {
+      document.location.href = '/login.html';
+    }
+
     errorHandler(error) {
-      alert("error 500");
+      alert("Error serveur (500)");
       console.log(error);
     }
 }
