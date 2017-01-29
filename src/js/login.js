@@ -59,7 +59,7 @@ $(function() {
         let pass = $('#register-form #password').val();
         let passc = $('#register-form #confirm-password').val();
         if (user != "" && pass != "" && passc == pass) {
-            register();
+            register(user, pass);
         } else {
             if (user == "" || pass == "")
                 $("#errorBox").html('<strong>Username and password require</strong>').show();
